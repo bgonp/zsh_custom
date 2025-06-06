@@ -1,0 +1,13 @@
+alias ls="eza"
+alias l="eza -lah"
+alias tree="eza -T"
+alias cat="batcat"
+alias g="git"
+alias c="code"
+
+alias nr="npm run"
+alias ns="npm run start"
+alias nb="npm run build"
+alias nt="npm run test"
+alias nl="npm run lint"
+alias nd="npm run dev"
