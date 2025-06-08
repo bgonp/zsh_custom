@@ -11,6 +11,9 @@ Personal **Oh My Zsh** configuration
 # Clone this repository and set the `ZSH_CUSTOM` environment variable to point to it:
 export ZSH_CUSTOM="$HOME/zsh_custom"
 
+# Find the theme setting set it to the one in the /themes folder:
+ZSH_THEME="headline"
+
 # Find the plugins definition and replace the defaults:
 plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting)
 ```
