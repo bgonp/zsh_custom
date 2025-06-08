@@ -680,3 +680,48 @@ headline-precmd() {
   _HL_CMD_NUM_PREV=$_HL_CMD_NUM
   _HL_AT_TOP='false'
 }
+
+# Custom configuration overrides
+declare -A HL_SEP=(
+  _PRE  ''
+  _LINE '_'
+  _POST ''
+)
+HL_LAYOUT_STYLE="%{$light_black%}"
+declare -a HL_LAYOUT_ORDER=(
+  _PRE USER HOST VENV PATH _SPACER BRANCH STATUS _POST
+)
+declare -A HL_LAYOUT_TEMPLATE=(
+  _PRE    "${IS_SSH+=> }"
+  USER    ''
+  HOST    ''
+  VENV    ' (...)'
+  PATH    '...'
+  _SPACER ' | '
+  BRANCH  '...'
+  STATUS  ' [...]'
+  _POST   ' '
+)
+declare -A HL_CONTENT_SOURCE=(
+  USER   ''
+  HOST   ''
+  VENV   'basename "$VIRTUAL_ENV"'
+  PATH   'print -rP "%~"'
+  BRANCH 'headline-git-branch'
+  STATUS 'headline-git-status'
+)
+declare -A HL_CONTENT_TEMPLATE=(
+  USER   "%{$bold$red%}..."
+  HOST   "%{$bold$yellow%}..."
+  VENV   "%{$bold$green%}..."
+  PATH   "%{$bold$blue%}..."
+  BRANCH "%{$bold$green%}..."
+  STATUS "%{$bold$yellow%}..."
+)
+HL_PROMPT='%(#.#.%(!.!.›) '
+
+HL_CLOCK_MODE='on'
+HL_CLOCK_SOURCE='date "+%H:%M:%S "'
+HL_GIT_COUNT_MODE='on'
+HL_GIT_SEP_SYMBOL='|'
+HL_ERR_MODE='detail'
